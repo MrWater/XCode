@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="XCode.Module.ChickenSoup.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XCode.Module.ChickenSoup.Views"
+             xmlns:panel="clr-namespace:XCode.Common.Controls.Panels;assembly=XCode.Common"
+             mc:Ignorable="d"  Loaded="UserControl_Loaded"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ScrollViewer x:Name="Scroll" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+        <panel:WaterfallPanel x:Name="Container" ChildMargin="8" Padding="20" ChildWidth="180" Background="White"/>
+    </ScrollViewer>
+</UserControl>

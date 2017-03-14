@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MahApps.Metro">
       <HintPath>..\XCode.Dependencies\MahApps.Metro.dll</HintPath>
@@ -98,10 +101,30 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\XCode.Common\XCode.Common.csproj">
+      <Project>{368bc927-b761-4975-896d-2752854dcbef}</Project>
+      <Name>XCode.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XCode.Framework\XCode.Framework.csproj">
+      <Project>{5b35b777-684f-47fc-bf2d-9e967d5d3acf}</Project>
+      <Name>XCode.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\code.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\error.png" />
+    <Resource Include="Images\heart.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\news.png" />
+    <Resource Include="Images\note.png" />
+    <Resource Include="Images\question.png" />
+    <Resource Include="Images\setting.png" />
+    <Resource Include="Images\skin.png" />
+    <Resource Include="Images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
