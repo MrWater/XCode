@@ -11,6 +11,6 @@ namespace XCode.Framework.Message_
     /// </summary>
     public interface IMessage
     {
-
+        MessageTypes MessageType { get; }
     }
 }

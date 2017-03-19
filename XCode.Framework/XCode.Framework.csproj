@@ -45,9 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\Module\ModuleConfig.cs" />
+    <Compile Include="Handle.cs" />
+    <Compile Include="Message_\IMessage.cs" />
+    <Compile Include="Message_\Message.cs" />
+    <Compile Include="Message_\IMessenger.cs" />
+    <Compile Include="Message_\MessageFunc.cs" />
+    <Compile Include="Message_\MessageMgr.cs" />
+    <Compile Include="Message_\MessageQueue.cs" />
+    <Compile Include="Message_\MessageResult.cs" />
+    <Compile Include="Message_\MessageState.cs" />
+    <Compile Include="Message_\MessageType.cs" />
+    <Compile Include="Message_\Messenger.cs" />
     <Compile Include="Module\IModule.cs" />
-    <Compile Include="Module\Message\MessageQueue.cs" />
-    <Compile Include="Module\Message\Message.cs" />
     <Compile Include="Module\ModuleBase.cs" />
     <Compile Include="Module\ModuleMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

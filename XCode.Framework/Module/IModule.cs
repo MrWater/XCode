@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using XCode.Framework.Message_;
 
 namespace XCode.Framework.Module
 {
@@ -32,5 +33,12 @@ namespace XCode.Framework.Module
         /// 模块句柄
         /// </summary>
         Handle Handle { get; }
+
+        /// <summary>
+        /// 消息处理过程
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        MessageResult MessageFunc(IMessage message);
     }
 }

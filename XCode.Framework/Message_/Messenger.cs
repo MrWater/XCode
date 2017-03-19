@@ -8,14 +8,13 @@ namespace XCode.Framework.Message_
 {
     public class Messenger : IMessenger
     {
-        public void AddHook(Handle recipient, MessageFunc messageFunc)
-        {
-            MessageMgr.Default.AddHook(recipient, messageFunc);
-        }
+        public static Messenger Default { get; set; }
 
-        public void RemoveHook(Handle recipient)
+        private Messenger() { }
+
+        static Messenger()
         {
-            MessageMgr.Default.RemoveHook(recipient);
+            Default = new Messenger();
         }
 
         public MessageResult SendMessage(Handle recipient, IMessage message)

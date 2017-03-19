@@ -22,6 +22,17 @@ namespace XCode.Framework.Message_
         public TParameter Parameter { get; }
 
         /// <summary>
+        /// 消息状态
+        /// TODO:Set方法如何禁止随意修改
+        /// </summary>
+        public MessageState MessageState { get; set; }
+
+        /// <summary>
+        /// 消息响应完成事件
+        /// </summary>
+        public EventHandler Completed;
+
+        /// <summary>
         /// 构造方法
         /// </summary>
         /// <param name="messageType"></param>
@@ -30,6 +41,7 @@ namespace XCode.Framework.Message_
         {
             this.MessageType = messageType;
             this.Parameter = parameter;
+            this.MessageState = MessageState.Initialized;
         }
     }
 }

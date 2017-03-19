@@ -15,5 +15,7 @@ namespace XCode.Framework.Module
         /// 单例
         /// </summary>
         public static readonly ModuleMgr Instance = new ModuleMgr();
+
+        private ModuleMgr() { }
     }
 }

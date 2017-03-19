@@ -12,12 +12,8 @@ namespace XCode.Common.Controls.Panels
     /// <summary>
     /// 瀑布流布局Panel
     /// </summary>
-    public class WaterfallPanel : Canvas
+    public class WaterfallPanel : DrawingCanvas
     {
-        /// <summary>
-        /// 所有可视化对象
-        /// </summary>
-        private List<FrameworkElement> _eles = new List<FrameworkElement>();
         /// <summary>
         /// 每一列的当前高度
         /// </summary>
@@ -56,45 +52,43 @@ namespace XCode.Common.Controls.Panels
         }
 
         #region 基础部分
-        protected override Visual GetVisualChild(int index)
+        public override void AddChild(Visual ele)
         {
-            return _eles[index];
-        }
+            if (!(ele is FrameworkElement))
+                return;
 
-        protected override int VisualChildrenCount
-        {
-            get
-            {
-                return _eles.Count;
-            }
-        }
+            var e = ele as FrameworkElement;
 
-        public void AddChild(FrameworkElement ele)
-        {
             //可能有网络延迟等影响size
-            ele.SizeChanged += Ele_SizeChanged;
+            e.SizeChanged += Ele_SizeChanged;
 
-            _eles.Add(ele);
-            this.Children.Add(ele);
-            AddNewChild(ele);
+            base.AddChild(ele);
+
+            AddNewChild(e);
         }
 
-        private void Ele_SizeChanged(object sender, SizeChangedEventArgs e)
+        public override void RemoveChild(Visual ele)
         {
-            this.Refresh();
-        }
+            if (!(ele is FrameworkElement))
+                return;
 
-        public void RemoveChild(FrameworkElement ele)
-        {
-            ele.SizeChanged -= Ele_SizeChanged;
-            _eles.Remove(ele);
-            this.Children.Remove(ele);
+            var e = ele as FrameworkElement;
+
+            e.SizeChanged -= Ele_SizeChanged;
+
+            base.RemoveChild(ele);
+
             this.UpdateLayout();
             Refresh();
         }
         #endregion
 
         #region 各种调整
+        private void Ele_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            this.Refresh();
+        }
+
         /// <summary>
         /// 负责调整chlid宽度以及位置
         /// </summary>
@@ -148,7 +142,7 @@ namespace XCode.Common.Controls.Panels
             //根据列数目和所有可视化对象重新排列
             foreach (var ele in _eles)
             {
-                AddNewChild(ele);
+                AddNewChild(ele as FrameworkElement);
             }
         }
         #endregion

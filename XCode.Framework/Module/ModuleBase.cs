@@ -36,6 +36,11 @@ namespace XCode.Framework.Module
         public abstract string Name { get; set; }
 
         public Handle Handle { get; private set; }
+
+        public virtual MessageResult MessageFunc(IMessage message)
+        {
+            return default(MessageResult);
+        }
         #endregion
     }
 }

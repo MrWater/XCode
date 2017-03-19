@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Buttons\XImgButton.cs" />
+    <Compile Include="Controls\Panels\DrawingCanvas.cs" />
     <Compile Include="Controls\Panels\WaterfallPanel.cs" />
     <Compile Include="Controls\TabControls\XImgTabControl.cs" />
     <Compile Include="Controls\TabControls\XImgTabItem.cs" />

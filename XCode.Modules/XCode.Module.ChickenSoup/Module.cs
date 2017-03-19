@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using XCode.Framework.Message_;
 using XCode.Framework.Module;
 using XCode.Module.ChickenSoup.Views;
 
@@ -14,7 +15,8 @@ namespace XCode.Module.ChickenSoup
     {
         private MainView _view;
 
-        public Module()
+        public Module() :
+            base()
         {
             _view = new MainView();
         }
@@ -30,5 +32,10 @@ namespace XCode.Module.ChickenSoup
         public override string Name { get; set; }
 
         public override Window Owner { get; set; }
+
+        //public override MessageResult MessageFunc(IMessage message)
+        //{
+        //    switch(message)
+        //}
     }
 }

@@ -1,5 +1,16 @@
 K:\GitHub\XCode\XCode.Framework\bin\Debug\XCode.Framework.dll
 K:\GitHub\XCode\XCode.Framework\bin\Debug\XCode.Framework.pdb
+H:\GitHub\XCode\XCode.Framework\obj\Debug\XCode.Framework.csprojResolveAssemblyReference.cache
+H:\GitHub\XCode\XCode.Framework\obj\Debug\Views\MainView.g.cs
+H:\GitHub\XCode\XCode.Framework\obj\Debug\XCode.Framework_MarkupCompile.cache
+H:\GitHub\XCode\XCode.Framework\obj\Debug\XCode.Framework_MarkupCompile.lref
+H:\GitHub\XCode\XCode.Framework\obj\Debug\XCode.Framework.dll
+H:\GitHub\XCode\XCode.Framework\obj\Debug\XCode.Framework.pdb
+H:\GitHub\XCode\Portal\Configs\Module\Module.config
+H:\GitHub\XCode\Portal\XCode.Framework.dll
+H:\GitHub\XCode\Portal\XCode.Framework.pdb
+H:\GitHub\XCode\XCode.Framework\obj\Debug\Views\MainView.baml
+H:\GitHub\XCode\XCode.Framework\obj\Debug\XCode.Framework.g.resources
 K:\GitHub\XCode\Portal\Configs\Module\Module.config
 K:\GitHub\XCode\Portal\XCode.Framework.dll
 K:\GitHub\XCode\Portal\XCode.Framework.pdb
