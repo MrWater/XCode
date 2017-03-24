@@ -20,7 +20,7 @@ namespace XCode.Framework.Configs.Module
         /// <summary>
         /// 配置文件路径
         /// </summary>
-        private const string _configFilePath = "./Configs/Module/Module.config";
+        private const string _configFilePath = "./Configs/Module.config";
 
         private static string _directory = "";
 

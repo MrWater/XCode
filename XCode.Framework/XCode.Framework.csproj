@@ -65,11 +65,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Configs\Module\Module.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\XCode.Common\XCode.Common.csproj">
       <Project>{368BC927-B761-4975-896D-2752854DCBEF}</Project>
       <Name>XCode.Common</Name>

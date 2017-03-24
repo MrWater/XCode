@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCode.Module.ChickenSoup", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCode.Common", "XCode.Common\XCode.Common.csproj", "{368BC927-B761-4975-896D-2752854DCBEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XCode.Module.SimplePS", "XCode.Modules\XCode.Module.SimplePS\XCode.Module.SimplePS.csproj", "{D6A89A5A-54FE-453E-AFEA-D3F881D03E34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,11 +37,16 @@ Global
 		{368BC927-B761-4975-896D-2752854DCBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{368BC927-B761-4975-896D-2752854DCBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{368BC927-B761-4975-896D-2752854DCBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A89A5A-54FE-453E-AFEA-D3F881D03E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A89A5A-54FE-453E-AFEA-D3F881D03E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A89A5A-54FE-453E-AFEA-D3F881D03E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A89A5A-54FE-453E-AFEA-D3F881D03E34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AD56642A-694A-4991-A77B-3DF04916E91A} = {8D5FCEFC-67F1-4DBC-A8EA-7AEA5053137C}
+		{D6A89A5A-54FE-453E-AFEA-D3F881D03E34} = {8D5FCEFC-67F1-4DBC-A8EA-7AEA5053137C}
 	EndGlobalSection
 EndGlobal

@@ -31,7 +31,6 @@ H:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.g.resources
 H:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.Properties.Resources.resources
 H:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.csproj.GenerateResource.Cache
 K:\GitHub\XCode\Portal\XCode.Main.exe.config
-K:\GitHub\XCode\Portal\Configs\Module\Module.config
 K:\GitHub\XCode\Portal\XCode.Main.exe
 K:\GitHub\XCode\Portal\XCode.Main.pdb
 K:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.csprojResolveAssemblyReference.cache
@@ -46,3 +45,4 @@ K:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.Properties.Resources.resources
 K:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.csproj.GenerateResource.Cache
 K:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.exe
 K:\GitHub\XCode\XCode.Main\obj\Debug\XCode.Main.pdb
+K:\GitHub\XCode\Portal\Configs\Module.config
