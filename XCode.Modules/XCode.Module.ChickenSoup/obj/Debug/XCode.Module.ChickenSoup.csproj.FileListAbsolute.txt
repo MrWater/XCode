@@ -10,3 +10,15 @@ K:\GitHub\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.Ch
 K:\GitHub\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.csproj.GenerateResource.Cache
 K:\GitHub\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.dll
 K:\GitHub\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.pdb
+F:\XCode\Portal\Modules\ChickenSoup\XCode.Module.ChickenSoup.dll
+F:\XCode\Portal\Modules\ChickenSoup\XCode.Module.ChickenSoup.pdb
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.csprojResolveAssemblyReference.cache
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\Views\MainView.g.cs
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup_MarkupCompile.cache
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup_MarkupCompile.lref
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\Views\MainView.baml
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.g.resources
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.Properties.Resources.resources
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.csproj.GenerateResource.Cache
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.dll
+F:\XCode\XCode.Modules\XCode.Module.ChickenSoup\obj\Debug\XCode.Module.ChickenSoup.pdb

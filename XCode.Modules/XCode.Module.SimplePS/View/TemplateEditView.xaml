@@ -7,7 +7,6 @@
              xmlns:vm="clr-namespace:XCode.Module.SimplePS.ViewModel"
              xmlns:layer="clr-namespace:XCode.Module.SimplePS.Layer"
              xmlns:common="clr-namespace:XCode.Module.SimplePS.Common"
-             xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" SnapsToDevicePixels="True"
              UseLayoutRounding="True"
              d:DesignHeight="800" d:DesignWidth="1300">
@@ -47,10 +46,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-        <Style x:Key="TabContorlStyleKey" TargetType="TabControl">
-            <Setter Property="metro:ControlsHelper.HeaderFontSize" Value="12"/>
-            <Setter Property="metro:TabControlHelper.IsUnderlined" Value="True"/>
         </Style>
 
         <SolidColorBrush x:Key="ToolListBackgroundKey" Color="WhiteSmoke"/>
@@ -119,7 +114,7 @@
         <Border BorderBrush="{StaticResource ToolListBorderBrushKey}"
                 BorderThickness="0,0,0.6,0"
                 Grid.Row="2">
-            <StackPanel Background="{StaticResource ToolListBackgroundKey}">
+            <StackPanel x:Name="ToolPanel" Background="{StaticResource ToolListBackgroundKey}">
                 <Border HorizontalAlignment="Center" 
                         Width="{Binding RelativeSource={RelativeSource AncestorType=StackPanel}, Path=ActualWidth}"
                         IsEnabled="False"
@@ -130,14 +125,14 @@
                                HorizontalAlignment="Center" 
                                VerticalAlignment="Center"/>
                 </Border>
-                <RadioButton Content="拖动 V" Uid="Tool_Drag"/>
-                <RadioButton Content="矩形 R" Uid="Tool_Rectangle"/>
-                <RadioButton Content="三角 T" Uid="Tool_Triangle"/>
-                <RadioButton Content="圆形 C" Uid="Tool_Circle"/>
-                <RadioButton Content="线条 L" Uid="Tool_Line"/>
-                <RadioButton Content="图片 I" Uid="Tool_Image"/>
-                <RadioButton Content="文字 W" Uid="Tool_Text"/>
-                <RadioButton Content="二维码 Q" Uid="Tool_QRCode"/>
+                <RadioButton x:Name="RBDrag" Content="拖动 V" Uid="Tool_Drag" IsChecked="True"/>
+                <RadioButton x:Name="RBRectangle" Content="矩形 R" Uid="Tool_Rectangle"/>
+                <RadioButton x:Name="RBTriangle" Content="三角 T" Uid="Tool_Triangle"/>
+                <RadioButton x:Name="RBCircle" Content="圆形 C" Uid="Tool_Circle"/>
+                <RadioButton x:Name="RBLine" Content="线条 L" Uid="Tool_Line"/>
+                <RadioButton x:Name="RBImage" Content="图片 I" Uid="Tool_Image"/>
+                <RadioButton x:Name="RBText" Content="文字 W" Uid="Tool_Text"/>
+                <RadioButton x:Name="RBQRCode" Content="二维码 Q" Uid="Tool_QRCode"/>
             </StackPanel>
         </Border>
 
@@ -150,14 +145,17 @@
             </Grid.RowDefinitions>
 
             <common:DrawingCanvas x:Name="CvsRoot"
-                                  Width="800" 
-                                  Height="550"
-                                  Background="White"
-                                  Grid.Row="0"/>
+                              Width="800" 
+                              Height="550"
+                              Background="White"
+                              Grid.Row="0"/>
             <StatusBar Grid.Row="1" 
                        Background="{StaticResource ToolListBackgroundKey}"
                        BorderThickness="0,0.6,0,0"
                        BorderBrush="{StaticResource ToolListBorderBrushKey}">
+                <StatusBarItem HorizontalAlignment="Left" Margin="5,0,0,0">
+                    <TextBlock x:Name="StateInfo" Text="就绪"/>
+                </StatusBarItem>
                 <StatusBarItem HorizontalAlignment="Right" Margin="0,0,20,0">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -168,11 +166,11 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="位置:["/>
+                        <TextBlock Text="位置:[ "/>
                         <TextBlock x:Name="CoordX" Text="0" Grid.Column="1"/>
-                        <TextBlock Text=" ," Grid.Column="2"/>
+                        <TextBlock Text=" " Grid.Column="2"/>
                         <TextBlock x:Name="CoordY" Text="0" Grid.Column="3"/>
-                        <TextBlock Text="]" Grid.Column="4"/>
+                        <TextBlock Text=" ]" Grid.Column="4"/>
                     </Grid>
                 </StatusBarItem>
             </StatusBar>
@@ -187,14 +185,19 @@
             </Grid.RowDefinitions>
 
             <Border Margin="0,0,0,2" 
-                    Background="White" 
                     BorderBrush="Gray"
+                    Background="{StaticResource ToolListBackgroundKey}"
                     BorderThickness="0.6">
-                
+                <!--<common:DrawingCanvas x:Name="CvsCamera"
+                              Background="{Binding ElementName=CvsRoot, Path=Background}"
+                              ClipToBounds="True"
+                              />-->
+                <!--<Border.Background>
+                    <VisualBrush x:Name="VisualCamera"/>
+                </Border.Background>-->
             </Border>
             <TabControl Grid.Row="1" Margin="0,2"
-                        Background="{StaticResource ToolListBackgroundKey}"
-                        Style="{StaticResource TabContorlStyleKey}">
+                    Background="{StaticResource ToolListBackgroundKey}">
                 <TabItem Header="图形属性">
                     <ScrollViewer x:Name="TabItemGeometryProperty"
                                   VerticalScrollBarVisibility="Auto">
@@ -206,8 +209,7 @@
                 </TabItem>
             </TabControl>
             <TabControl Grid.Row="2" Margin="0,2"
-                         Background="{StaticResource ToolListBackgroundKey}"
-                        Style="{StaticResource TabContorlStyleKey}">
+                    Background="{StaticResource ToolListBackgroundKey}">
                 <TabItem Header="图层管理">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -218,9 +220,9 @@
                         <StackPanel Orientation="Horizontal">
                             
                         </StackPanel>
-                        <ListBox x:Name="LayerList" Grid.Row="1" 
+                        <ListBox x:Name="LayerGroup" Grid.Row="1" 
                                  SelectionMode="Extended"
-                                 SelectionChanged="LayerList_SelectionChanged">
+                                 SelectionChanged="LayerGroup_SelectionChanged">
                             <ListBox.ItemTemplate>
                                 <DataTemplate DataType="layer:LayerBase">
                                     <StackPanel Orientation="Horizontal" Height="30">

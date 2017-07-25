@@ -62,6 +62,24 @@ namespace XCode.Module.SimplePS.Common
             }
         }
 
+        public virtual void RemoveAll()
+        {
+            foreach (var ele in _eles)
+            {
+                if (ele is UIElement)
+                {
+                    this.Children.Remove(ele as UIElement);
+                }
+                else if (ele is DrawingVisual)
+                {
+                    RemoveVisualChild(ele);
+                    RemoveLogicalChild(ele);
+                }
+            }
+
+            _eles.Clear();
+        }
+
         public Visual GetVisual(Point point)
         {
             HitTestResult hitResult = VisualTreeHelper.HitTest(this, point);

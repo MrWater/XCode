@@ -11,3 +11,16 @@ K:\GitHub\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.Simpl
 K:\GitHub\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.csproj.GenerateResource.Cache
 K:\GitHub\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.dll
 K:\GitHub\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.pdb
+F:\XCode\Portal\Modules\SimplePS\XCode.Module.SimplePS.dll
+F:\XCode\Portal\Modules\SimplePS\XCode.Module.SimplePS.pdb
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.csprojResolveAssemblyReference.cache
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\View\TemplateEditView.g.cs
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS_MarkupCompile.cache
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS_MarkupCompile.lref
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\View\TemplateEditView.baml
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.g.resources
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.Properties.Resources.resources
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.csproj.GenerateResource.Cache
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.dll
+F:\XCode\XCode.Modules\XCode.Module.SimplePS\obj\Debug\XCode.Module.SimplePS.pdb

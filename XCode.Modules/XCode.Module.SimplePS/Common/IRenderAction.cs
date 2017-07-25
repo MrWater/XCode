@@ -29,14 +29,18 @@ namespace XCode.Module.SimplePS.Common
         /// <summary>
         /// 高亮
         /// </summary>
-        void HighLight();
+        void Highlight();
 
         /// <summary>
         /// 平移
         /// </summary>
         /// <param name="offsetX"></param>
         /// <param name="offsetY"></param>
-        /// <param name="stop">True:表示移动后改变属性 False:仅仅是移动，不改变实际属性</param>
-        void Move(double offsetX, double offsetY, bool stop = false);
+        void Move(double offsetX, double offsetY);
+
+        /// <summary>
+        /// 渲染完成调用，重置状态
+        /// </summary>
+        void ResetState();
     }
 }

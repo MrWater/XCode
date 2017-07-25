@@ -1,6 +1,7 @@
 ﻿using XCode.Module.SimplePS.Common;
-using XCode.Module.SimplePS.Geometry.GeometryAction;
-using XCode.Module.SimplePS.Geometry.GeometryProperty;
+using XCode.Module.SimplePS.Geometry.Action;
+using XCode.Module.SimplePS.Geometry.GeometrySpecialAction;
+using XCode.Module.SimplePS.Geometry.Style;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +11,25 @@ using System.Windows.Media;
 
 namespace XCode.Module.SimplePS.Geometry
 {
-    internal abstract class GeometryBase : DrawingVisual, IGeometry
+    internal abstract class GeometryBase : DrawingVisual, IGeometry, ICloneable
     {
         public GeometryStyleBase Style { get; set; }
-        public GeometryActionBase Action { get; set; }
+        public GeometryBaseAction Action { get; set; }
         public Handle Handle { get; private set; }
-        public bool Visible { get; set; }
+        public SpecialActionGroup SpecialActionGroup { get; set; }
 
         protected GeometryBase()
         {
             Handle = Handle.NewHandle();
-            Visible = true;
+            SpecialActionGroup = new SpecialActionGroup();
         }
 
         #region 行为
         public virtual void Refresh()
         {
-            if(Style.HighLight)
+            if(Style.Highlight)
             {
-                HighLight();
+                Highlight();
             }
             else
             {
@@ -46,29 +47,46 @@ namespace XCode.Module.SimplePS.Geometry
 
         public virtual void Render()
         {
+            if (SpecialActionGroup != null)
+            {
+                SpecialActionGroup.Excute(Style);
+            }
+
             using (DrawingContext dc = this.RenderOpen())
             {
                 Action.Render(dc, Style);
             }
         }
 
-        public virtual void Move(double offsetX, double offsetY, bool stop = false)
+        public virtual void Move(double offsetX, double offsetY)
         {
             using (DrawingContext dc = this.RenderOpen())
             {
-                Action.Move(dc, Style, offsetX, offsetY, stop);
+                Action.Move(dc, Style, offsetX, offsetY);
             }
         }
 
-        public virtual void HighLight()
+        public virtual void Highlight()
         {
-            Style.HighLight = true;
+            Style.Highlight = true;
+
+            if (SpecialActionGroup != null)
+            {
+                SpecialActionGroup.Excute(Style);
+            }
 
             using (DrawingContext dc = this.RenderOpen())
             {
-                Action.HighLight(dc, Style);
+                Action.Highlight(dc, Style);
             }
-        } 
+        }
+
+        public virtual void ResetState()
+        {
+            Action.ResetState();
+        }
         #endregion
+
+        public abstract object Clone();
     }
 }

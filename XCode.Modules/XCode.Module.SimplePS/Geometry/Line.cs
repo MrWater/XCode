@@ -1,5 +1,5 @@
-﻿using XCode.Module.SimplePS.Geometry.GeometryAction;
-using XCode.Module.SimplePS.Geometry.GeometryProperty;
+﻿using XCode.Module.SimplePS.Geometry.Action;
+using XCode.Module.SimplePS.Geometry.Style;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +12,20 @@ namespace XCode.Module.SimplePS.Geometry
     /// <summary>
     /// 线条Geometry
     /// </summary>
-    internal class Line : VectorGeometry
+    internal class Line : VectorGeometryBase
     {
-        public Line(GeometryStyleBase style, GeometryActionBase action)
+        public Line(GeometryStyleBase style, GeometryBaseAction action)
             : base()
         {
             Style = style;
             Action = action;
-        } 
+        }
+
+        public override object Clone()
+        {
+            Line line = new Line(Style, Action);
+            line.Render();
+            return line;
+        }
     }
 }

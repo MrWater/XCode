@@ -32,11 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MahApps.Metro">
-      <HintPath>..\..\XCode.Dependencies\MahApps.Metro.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,37 +53,71 @@
     <Compile Include="Action\Action_AddLine.cs" />
     <Compile Include="Action\IAction.cs" />
     <Compile Include="Action\Transaction.cs" />
-    <Compile Include="Common\DeepCopyHelper.cs" />
     <Compile Include="Common\DrawingCanvas.cs" />
     <Compile Include="Common\Handle.cs" />
+    <Compile Include="Common\Hotkey\Hotkey.cs" />
     <Compile Include="Common\IRenderAction.cs" />
     <Compile Include="Common\ObservableObject.cs" />
-    <Compile Include="Common\Paint\PaintContext.cs" />
-    <Compile Include="Common\Paint\PaintManager.cs" />
-    <Compile Include="Common\Paint\PaintType.cs" />
     <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\Style\IFillStyle.cs" />
+    <Compile Include="Common\Style\IImageStyle.cs" />
+    <Compile Include="Common\Style\ILineStyle.cs" />
     <Compile Include="Common\Style\IStyle.cs" />
     <Compile Include="Common\Style\StyleAttribute.cs" />
-    <Compile Include="Common\Style\StyleEditor.cs" />
-    <Compile Include="Geometry\GeometryAction\Action\LineAction.cs" />
-    <Compile Include="Geometry\GeometryAction\GeometryActionBase.cs" />
-    <Compile Include="Geometry\GeometryAction\IGeometryAction.cs" />
+    <Compile Include="Common\Style\StyleExtension.cs" />
+    <Compile Include="Common\WindowConst.cs" />
+    <Compile Include="Geometry\Action\CircleAction.cs" />
+    <Compile Include="Geometry\Action\GeometryActionBase.cs" />
+    <Compile Include="Geometry\Action\IGeometryAction.cs" />
+    <Compile Include="Geometry\Action\ImageAction.cs" />
+    <Compile Include="Geometry\Action\LineAction.cs" />
+    <Compile Include="Geometry\Action\RectangleAction.cs" />
+    <Compile Include="Geometry\Action\TextAction.cs" />
+    <Compile Include="Geometry\Action\TriangleAction.cs" />
+    <Compile Include="Geometry\Circle.cs" />
     <Compile Include="Geometry\GeometryBase.cs" />
-    <Compile Include="Geometry\GeometryStyle\GeometryStyleBase.cs" />
-    <Compile Include="Geometry\GeometryStyle\Style\LineStyle.cs" />
     <Compile Include="Geometry\GeometryType.cs" />
     <Compile Include="Geometry\IGeometry.cs" />
+    <Compile Include="Geometry\Image.cs" />
+    <Compile Include="Geometry\ImageGeometryBase.cs" />
     <Compile Include="Geometry\Line.cs" />
-    <Compile Include="Geometry\VectorGeometry.cs" />
+    <Compile Include="Geometry\Rectangle.cs" />
+    <Compile Include="Geometry\Shell\IGeometryShell.cs" />
+    <Compile Include="Geometry\SpecialAction\Action\DrawLineWithShiftAction.cs" />
+    <Compile Include="Geometry\SpecialAction\Action\DrawPolygonWithShiftAction.cs" />
+    <Compile Include="Geometry\SpecialAction\ISpecialAction.cs" />
+    <Compile Include="Geometry\SpecialAction\SpecialActionBase.cs" />
+    <Compile Include="Geometry\SpecialAction\SpecialActionGroup.cs" />
+    <Compile Include="Geometry\SpecialAction\SpecialActionPool.cs" />
+    <Compile Include="Geometry\Style\CircleStyle.cs" />
+    <Compile Include="Geometry\Style\GeometryStyleBase.cs" />
+    <Compile Include="Geometry\Style\IGeometryStyle.cs" />
+    <Compile Include="Geometry\Style\ImageStyle.cs" />
+    <Compile Include="Geometry\Style\LineStyle.cs" />
+    <Compile Include="Geometry\Style\RectangleStyle.cs" />
+    <Compile Include="Geometry\Style\TextStyle.cs" />
+    <Compile Include="Geometry\Style\TriangleStyle.cs" />
+    <Compile Include="Geometry\Text.cs" />
+    <Compile Include="Geometry\Triangle.cs" />
+    <Compile Include="Geometry\VectorGeometryBase.cs" />
     <Compile Include="Layer\ILayer.cs" />
     <Compile Include="Layer\LayerBase.cs" />
-    <Compile Include="Layer\LayerList.cs" />
+    <Compile Include="Layer\LayerGroup.cs" />
     <Compile Include="Layer\SimpleLayer.cs" />
     <Compile Include="Module.cs" />
-    <Compile Include="PaintTool\DragTool.cs" />
-    <Compile Include="PaintTool\LineTool.cs" />
-    <Compile Include="PaintTool\PaintToolBase.cs" />
-    <Compile Include="PaintTool\ToolType.cs" />
+    <Compile Include="Paint\IPaintBehavior.cs" />
+    <Compile Include="Paint\PaintContext.cs" />
+    <Compile Include="Paint\PaintManager.cs" />
+    <Compile Include="Paint\PaintType.cs" />
+    <Compile Include="Paint\Tool\CircleTool.cs" />
+    <Compile Include="Paint\Tool\DragTool.cs" />
+    <Compile Include="Paint\Tool\ImageTool.cs" />
+    <Compile Include="Paint\Tool\LineTool.cs" />
+    <Compile Include="Paint\Tool\PaintToolBase.cs" />
+    <Compile Include="Paint\Tool\RectangleTool.cs" />
+    <Compile Include="Paint\Tool\TextTool.cs" />
+    <Compile Include="Paint\Tool\ToolType.cs" />
+    <Compile Include="Paint\Tool\TriangleTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,6 +131,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Service\TemplateEditHotkeyMgr.cs" />
     <Compile Include="Service\TemplateEditService.cs" />
     <Compile Include="ViewModel\TemplateEditViewModel.cs" />
     <Compile Include="View\TemplateEditView.xaml.cs">

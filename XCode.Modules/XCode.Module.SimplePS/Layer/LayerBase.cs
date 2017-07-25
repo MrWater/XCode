@@ -28,10 +28,17 @@ namespace XCode.Module.SimplePS.Layer
                     return;
 
                 _visible = value;
-                if(_geometries != null)
+                
+                if(value == true)
                 {
-                    _geometries.ForEach(m => m.Visible = value);
+                    Refresh();
                 }
+                else
+                {
+                    Hide();
+                }
+
+                RaisePropertyChanged("Visible");
             }
         }
 
@@ -56,14 +63,14 @@ namespace XCode.Module.SimplePS.Layer
         /// </summary>
         public string Name { get; set; }
 
-        public bool IsHighLight { get; set; }
+        public bool IsHighlight { get; set; }
 
         protected LayerBase()
         {
             Editable = true;
             Visible = true;
             _geometries = new List<GeometryBase>();
-            IsHighLight = false;
+            IsHighlight = false;
         }
 
         public virtual void Render()
@@ -81,6 +88,7 @@ namespace XCode.Module.SimplePS.Layer
                 _geometries.ForEach(m => m.Refresh());
             }
         }
+
         public void AddGeometry(GeometryBase Geometry)
         {
             if (_geometries != null)
@@ -89,32 +97,46 @@ namespace XCode.Module.SimplePS.Layer
             }
         }
 
-        public List<GeometryBase> GetGeometrys()
+        public List<GeometryBase> GetGeometries()
         {
             return _geometries;
         }
 
         public void Hide()
         {
-            throw new NotImplementedException();
+            if (_geometries != null)
+            {
+                _geometries.ForEach(m =>
+                {
+                    m.Hide();
+                });
+            }
         }
 
-        public void HighLight()
+        public void Highlight()
         {
             if (_geometries != null)
             {
                 _geometries.ForEach(m =>
                 {
-                    m.HighLight();
+                    m.Highlight();
                 });
             }
         }
 
-        public void Move(double offsetX, double offsetY, bool stop = false)
+        public void Move(double offsetX, double offsetY)
         {
             if(_geometries != null)
             {
-                _geometries.ForEach(m => m.Move(offsetX, offsetY, stop));
+                _geometries.ForEach(m => m.Move(offsetX, offsetY));
+            }
+        }
+
+        public void ResetState()
+        {
+            if (_geometries != null)
+            {
+                _geometries.ForEach(m => m.ResetState());
             }
         }
     }
